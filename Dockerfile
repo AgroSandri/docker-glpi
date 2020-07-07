@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 #Installation d'apache et de php7.3 avec extension
 RUN apt update \
-&& apt --yes install \
+&& apt install --yes --no-install-recommends \
 apache2 \
 php7.3 \
 php7.3-mysql \
@@ -22,8 +22,12 @@ php7.3-mbstring \
 php7.3-xml \
 php7.3-apcu-bc \
 php-cas \
+php7.3-intl \
+php7.3-zip \
+php7.3-bz2 \
 cron \
 wget \
+ca-certificates \
 jq \
 && rm -rf /var/lib/apt/lists/*
 
